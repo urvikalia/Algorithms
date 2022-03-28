@@ -39,6 +39,27 @@ public class sumNumbers {
     /*If memory is a concern , can use two pointer approach (once sorted)*/
 
 
+    private static String twoPointerApprach(int[]input,int target)
+    {
+        Arrays.sort(input);
+
+        int leftcounter = 0;
+        int rightcounter = input.length-1;
+        while(leftcounter<rightcounter)
+        {
+            int sum = input[leftcounter] + input[rightcounter];
+            if(sum==target) {
+                return ("match found:" + input[leftcounter] + " & " + input[rightcounter]);
+            }
+            else if(sum>target)
+                rightcounter--;
+            else
+                leftcounter++;
+
+        }
+        return ("No match found");
+    }
+
     public static void main(String[] args) {
         System.out.println("Brute force approach for Sum of Numbers problems");
         int [] input ={2,4,5,6,7,8,10};
@@ -47,8 +68,8 @@ public class sumNumbers {
 
 
         System.out.println("Two pointer approach");
-        Arrays.sort(input);
+        System.out.println(twoPointerApprach(input,12));
 
-      
+
     }
 }
