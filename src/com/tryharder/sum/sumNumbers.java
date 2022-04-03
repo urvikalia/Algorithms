@@ -2,6 +2,8 @@ package com.tryharder.sum;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class sumNumbers {
@@ -75,11 +77,16 @@ public class sumNumbers {
         Array can contain duplicate elements.
      */
 
+    /*brute force time complexity => O(N^2)
+    * divide and conquer and decrease and conquer are not anything better than brute force approach
+    * searching is costing N^2
+    * Transform and conquer appoach: O(N)
+    * 1. sort and then two pointer approach
+    * 2. store it in hash table
+    * */
     // return indices of two values that sum up the target
+
     static ArrayList<Integer> pair_sum_sorted_array(ArrayList<Integer> numbers, Integer target) {
-        // Write your code here.
-
-
         for (int x = 0; x< numbers.size(); x++) {  // n times
 
             int yvalue = target-numbers.get(x);
@@ -97,6 +104,23 @@ public class sumNumbers {
         return new ArrayList(Arrays.asList(-1,-1));
     }
 
+
+    /*Transform and conquer approach : o(N)*/
+
+    static ArrayList<Integer> two_sum(ArrayList<Integer> numbers, Integer target) {
+        Map<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
+
+        for (int x = 0; x < numbers.size(); x++) {  // n times
+
+            int yvalue = target - numbers.get(x);
+            if (hashmap.containsKey(yvalue)) {
+                return new ArrayList<>(Arrays.asList(x, hashmap.get(yvalue)));
+            } else {
+                hashmap.put(numbers.get(x), x);
+            }
+        }
+        return new ArrayList(Arrays.asList(-1, -1));
+    }
 
 
 
