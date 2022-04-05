@@ -7,7 +7,17 @@ public class raisetoK {
         if(k==0)
             return (1);
         else
-            return (n* raisetoK(n, k - 1));
+            return (n* raisetoK(n, k - 1)); // Time complexity O(k)
+
+    }
+
+    static int iterativeApproach(int n,int k)
+    {
+        int result = 1;
+        for (int i = 0; i < k; i++) {
+            result =result*n;
+        }
+        return (result);
 
     }
 
@@ -18,5 +28,8 @@ public class raisetoK {
         System.out.println("Output of raisetoK function: ");
         System.out.println(raisetoK(number,k));
 
+
+        System.out.println("Iterative approach");
+        System.out.println(iterativeApproach(5,3));
     }
 }
