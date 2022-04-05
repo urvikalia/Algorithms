@@ -8,7 +8,7 @@ public class countSubsets {
         if(noOfPossibilities==0)
             return (1);
         else
-            return (2 * countSubset(noOfPossibilities - 1));
+            return (2 * countSubset(noOfPossibilities - 1)); // time complexity is O(n)
     }
 
 //    TODO: Optimized for time complexity
