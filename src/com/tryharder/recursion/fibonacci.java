@@ -15,6 +15,6 @@ public class fibonacci {
 
     public static void main(String[] args) {
 
-        System.out.println(fibonnacciNthElement(8));
+        System.out.println(fibonnacciNthElement(12));
     }
 }

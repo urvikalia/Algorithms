@@ -7,7 +7,7 @@ public class raisetoK {
         if(k==0)
             return (1);
         else
-            return (n* raisetoK(n, k - 1)); // Time complexity O(k)
+            return (n* raisetoK(n, k - 1)); // Time complexity O(k) , space complexity =
 
     }
 

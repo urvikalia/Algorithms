@@ -2,6 +2,7 @@ package com.tryharder.recursion;
 
 public class countSubsets {
 
+//How many subsets of set of size n are there ?
 
     static int countSubset(int noOfPossibilities)
     {
