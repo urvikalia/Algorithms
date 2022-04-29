@@ -41,7 +41,23 @@ public class permute{
 
     static void helper(List<Integer> input, int ind, ArrayList<ArrayList<Integer>> result) {
 
-        
+
+        if(ind==input.size())
+            result.add(new ArrayList<Integer>(input));
+
+
+        else
+        {
+            for(int pick=ind ;pick<input.size();pick++)
+            {
+                Collections.swap(input,ind,pick);
+                helper(input,ind+1,result);
+                Collections.swap(input,ind,pick);
+
+
+            }
+        }
+
     }
 
     public static void main(String[] args) {

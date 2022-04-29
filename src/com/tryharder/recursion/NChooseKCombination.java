@@ -38,13 +38,43 @@ Given two integers n and k, find all the possible unique combinations of k numbe
 public class NChooseKCombination {
 
 
+    static ArrayList<ArrayList<Integer>> helper(int n, int ind, int k, ArrayList<Integer>slate,ArrayList<ArrayList<Integer>> result)
+    {
+
+        if(k==slate.size())
+        {
+            result.add(new ArrayList<Integer>(slate));
+           /* slate = new ArrayList<Integer>();*/
+        }
+        else
+        {
+            for(int i =ind;i<n;i++) {
+                slate.add(ind + 1);
+                helper(n, ind + 1, k, slate, result);
+                //slate.add(ind + 1);
+               // helper(n, ind + 1, k, slate, result);
+                slate.remove(slate.size() - 1);
+
+            }
+
+            //slate = new ArrayList<Integer>();
+
+        }
+        return result;
+    }
     static ArrayList<ArrayList<Integer>> find_combinations(Integer n, Integer k) {
-        // Write your code here.
-        return new ArrayList();
+        ArrayList<ArrayList<Integer>> result=new ArrayList<>();
+        result= helper(n,0,k,new ArrayList<Integer>(),result);
+        return result;
     }
 
 
     public static void main(String[] args) {
+        ArrayList<ArrayList<Integer>> result = find_combinations(5, 2);
 
+        System.out.println(result.size());
+        for (ArrayList<Integer> res : result) {
+            System.out.println(res);
+        }
     }
 }
