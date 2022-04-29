@@ -2,7 +2,7 @@ package com.tryharder.trees;
 
 public class Insert {
 
-    class TreeNode{
+    static class TreeNode{
         int key;
         TreeNode left;
         TreeNode right;
@@ -15,11 +15,8 @@ public class Insert {
         }
     }
     public static void main(String[] args) {
-        int hashp;
+
 
     }
-    static void test()
-    {
 
-    }
 }
