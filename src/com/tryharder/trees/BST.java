@@ -1,6 +1,8 @@
 package com.tryharder.trees;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class BST {
 
@@ -105,10 +107,39 @@ public class BST {
         return current.key;
     }
 
-    public void printBSTTree(BST root)
+    /*
+    Breadth first search
+     */
+    public List<List<Integer>> bsf(BST root)
     {
+        BST current = root;
+        LinkedList<BST> queue = new LinkedList<>();
+        List<List<Integer>> result = new ArrayList<>();
 
+        queue.add(root);
+
+        while(!queue.isEmpty())
+        {
+            int queueSize = queue.size();
+            ArrayList<Integer> levelNodes = new ArrayList<>();
+
+            for(int i =0;i<queueSize;i++)
+            {
+                BST node = queue.pop();
+                levelNodes.add(node.key);
+
+                if(node.left!=null)
+                    queue.add(node.left);
+                if(node.right!=null)
+                    queue.add(node.right);
+
+            }
+            result.add(new ArrayList<>(levelNodes));
+
+        }
+        return result;
     }
+
     public void printPreOrder(BST root)
     {
 

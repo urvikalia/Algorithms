@@ -1,5 +1,7 @@
 package com.tryharder.trees;
 
+import java.util.*;
+
 public class PathSum {
 
 //    Given a binary tree and an integer k, check whether the tree has a root to leaf path with a sum of values equal to k.

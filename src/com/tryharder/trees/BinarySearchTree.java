@@ -2,7 +2,7 @@ package com.tryharder.trees;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
+import java.util.List;
 
 public class BinarySearchTree {
 
@@ -23,7 +23,9 @@ public class BinarySearchTree {
         System.out.println("Maximum value in binary search tree is:");
         System.out.println(root.getMax(root));
 
-
+        System.out.println("BFS");
+        List<List<Integer>> result = root.bsf(root);
+        result.stream().forEach(item -> System.out.println(item));
 
     }
 }
