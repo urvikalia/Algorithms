@@ -1,5 +1,7 @@
 package com.tryharder.trees;
 
+import java.net.Inet4Address;
+
 public class DiameterOfTree {
 
 /*    Notes
@@ -11,12 +13,42 @@ public class DiameterOfTree {
             0 <= node value < number of nodes
     Node values are unique*/
 
+
+    class BinaryTreeNode {
+        Integer value;
+        BinaryTreeNode left;
+        BinaryTreeNode right;
+
+        BinaryTreeNode(Integer value) {
+            this.value = value;
+            this.left = null;
+            this.right = null;
+        }
+    }
+
+    static Integer helper(BinaryTreeNode node)
+    {
+        if(node==null)
+            return 0;
+
+        int left = helper(node.left);
+        int right = helper(node.right);
+
+        treeLength = Integer.max(treeLength, left + right);
+
+        return 1+Integer.max(left, right);
+
+    }
+
+    static Integer treeLength =0;
     static Integer binary_tree_diameter(BinaryTreeNode root) {
-        // Write your code here.
-        return 0;
+
+        helper(root);
+        return treeLength;
     }
 
     public static void main(String[] args) {
+
 
     }
 }

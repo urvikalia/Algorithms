@@ -22,7 +22,7 @@ static class BinaryTreeNode {
 
     static void helper(BinaryTreeNode root, Integer k,ArrayList<Integer> slate ,ArrayList<ArrayList<Integer>> result)
     {
-        
+
 
     }
     static ArrayList<ArrayList<Integer>> all_paths_sum_k(BinaryTreeNode root, Integer k) {
